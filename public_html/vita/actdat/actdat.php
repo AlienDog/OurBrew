@@ -14,7 +14,7 @@
  $ch = curl_init();
  
  curl_setopt($ch, CURLOPT_URL, "https://commerce.np.ac.playstation.net/cap.m");
- curl_setopt($ch, CURLOPT_USERAGENT, "Legium pro Britania");
+ curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (PlayStation Vita 3.20) AppleWebKit/537.73 (KHTML, like Gecko) Silk/3.2");
  curl_setopt($ch, CURLOPT_HTTPHEADER, $custom_headers);
  
  curl_setopt($ch, CURLOPT_POST, 1);
@@ -35,5 +35,7 @@
  $fp = fopen("act.dat", "wb");
  fwrite($fp, $response);
  fclose($fp);
+
+header("Location: act.dat"); 
  
  ?>
